@@ -17,6 +17,7 @@ The contents of this repository form a catkin workspace. The simulation can be r
 > chmod +x home_service.sh
 > ./home_service.sh
 ```
+PLEASE NOTE: The shell scripts contain roslaunch commands that denote paths for map and gazebo world files. These will probably need to be modified to match your specific workspace before running.
 
 Directory contents under src :
 
