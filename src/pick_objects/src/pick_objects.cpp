@@ -23,10 +23,11 @@ int main(int argc, char** argv){
   goal.target_pose.header.frame_id = "map";
   goal.target_pose.header.stamp = ros::Time::now();
 
-  // ------------------- GOAL POSITION 1--------------------------
+  // ------------------- PICKUP GOAL --------------------------
   
   // Define a position and orientation for the robot to reach
-  goal.target_pose.pose.position.x = -1.0;
+  goal.target_pose.pose.position.x = 3.0;
+  goal.target_pose.pose.position.y = 0.5;
   goal.target_pose.pose.orientation.w = 1.0;
 
    // Send the goal position and orientation for the robot to reach
@@ -42,7 +43,7 @@ int main(int argc, char** argv){
   else
     ROS_INFO("The base failed to move to the pickup goal for some reason");
   
-  // ------------------- GOAL POSITION 2--------------------------
+  // ------------------- DELIVERY GOAL --------------------------
   
   // Wait 5 sec at the pickup location
   while(!ac.waitForServer(ros::Duration(5.0))){
@@ -50,7 +51,8 @@ int main(int argc, char** argv){
   }
   
   // Define a position and orientation for the robot to reach
-  goal.target_pose.pose.position.x = 2.0;
+  goal.target_pose.pose.position.x = -2.0;
+  goal.target_pose.pose.position.y = -1.0;
   goal.target_pose.pose.orientation.w = 1.0;
 
    // Send the goal position and orientation for the robot to reach
